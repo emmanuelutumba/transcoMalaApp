@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/faqFragment">
+
+    <fragment
+        android:id="@+id/messageFragment"
+        android:name="com.mala.transco.MessageFragment"
+        android:label="fragment_message"
+        tools:layout="@layout/fragment_message" >
+        <action
+            android:id="@+id/action_messageFragment_to_faqFragment"
+            app:destination="@id/faqFragment" />
+        <argument
+            android:name="faqData"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/faqFragment"
+        android:name="com.mala.transco.FaqFragment"
+        android:label="FaqFragment"
+        tools:layout="@layout/fragment_item_list">
+        <action
+            android:id="@+id/action_faqFragment_to_messageFragment"
+            app:destination="@id/messageFragment" />
+    </fragment>
+</navigation>
